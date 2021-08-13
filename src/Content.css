@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(44, 43, 43);
+}
+.main{
+
+    margin-top: 15vh;  
+    padding: 20px; 
+    margin-left: 80px;  
+    text-align: center;
+    display: grid;
+    grid: 350px / auto auto auto auto;
+        
+    width: 90%  ; 
+    
+    /* height: vh; */
+
+ 
+}
+
+.cards{
+   
+   
+    height: 300px;
+    width: 220px;
+    margin: 20px;
+    border-radius: 10PX;
+    
+}
+.cards:hover{
+     
+        background-color: white;
+        color: rgb(216, 15, 15);
+        font-weight: 800;
+        transform: scale(1.2);
+        border: 5px solid white;
+        
+       
+    
+}
+@media (max-width:1000px)
+{
+    .main{
+        
+        margin-top: 15vh;  
+        padding: 20px; 
+        margin-left: 50px; 
+        
+        display: grid;
+        align-items: center;
+        grid: 300px / auto ;
+        margin-left: 15vw ;
+            
+        width: 70%  ; 
+    }
+    .cards{
+   
+        
+        height: 300px;
+        width: 220px;
+        margin: 30px;
+        
+    }
+
+
+}
+

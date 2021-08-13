@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React ,{useEffect, useState} from 'react';
 import './App.css';
+import axios from 'axios'; 
+import { Topbar } from './Topbar';
+import Content from './Content';
+
 
 function App() {
+  const [items, setItems] = useState([]); 
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    const fetchItems = async ()=>{
+        const res= await axios.get(`https://www.breakingbadapi.com/api/characters`)
+
+        console.log(res.data)
+        setItems(res.data);
+        setIsLoading(false);
+
+    }
+    fetchItems();
+  
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Topbar/>
+    <Content isLoading={isLoading} items={items} />
+   
     </div>
   );
 }
